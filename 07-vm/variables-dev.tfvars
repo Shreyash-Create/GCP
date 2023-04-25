@@ -1,0 +1,7 @@
+project_id= "paulo-iac-dev"
+env="dev"
+region="us-east1"
+zone = "us-east1-b"
+vpc = "d-vpc"
+filename = "./vm.csv"
+subnetwork = "subnet-01"
