@@ -1,0 +1,51 @@
+name: 'Terraform CI'
+
+on:
+  push:
+    branches:
+    - dev
+env:
+  folder_path:  ./07-vm          #change the folder name as needed
+  GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY}}
+  var_file: variables-dev.tfvars
+  backend_file: dev.tfbackend
+defaults:
+  run:
+    shell: bash
+jobs:
+  terraform:
+    name: 'Terraform'
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the repository to the GitHub Actions runner
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v1
+      
+    - name: Setup GCP Service Account
+      uses: google-github-actions/setup-gcloud@v1
+      with:
+          version: 'latest'
+          #service_account_email: ${{ secrets.GCP_SA_EMAIL }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+
+    # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
+    - name: Terraform Init
+      working-directory: ${{ env.folder_path }}
+      run: terraform init -var-file=${{ env.var_file }} -backend-config=${{ env.backend_file }}
+
+     # Generates an execution plan for Terraform
+    - name: Terraform Plan
+      working-directory: ${{ env.folder_path }}
+      run: terraform plan -var-file=${{ env.var_file }}
+
+      # On push to main, build or change infrastructure according to Terraform configuration files
+    - name: Terraform Apply
+      if: github.ref == 'refs/heads/dev' && github.event_name == 'push'
+      working-directory: ${{ env.folder_path }}
+      run: terraform apply -auto-approve -var-file=${{ env.var_file }}
