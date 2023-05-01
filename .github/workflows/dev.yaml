@@ -3,7 +3,7 @@ name: 'Terraform CI'
 on:
   push:
     branches:
-    - dev
+    - main
 env:
   folder_path:  ./07-vm          #change the folder name as needed
   GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY}}
