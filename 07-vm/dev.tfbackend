@@ -1,2 +1,2 @@
-bucket = "paulo-iac-bucket-tfstate"
+bucket = "terraform-gcptest"
 prefix  = "dev/vm"
