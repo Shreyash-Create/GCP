@@ -3,4 +3,4 @@ test-vm01,this is used for application,abc-inc,debian-cloud/debian-11,100,us-eas
 test-vm02,this is for application,shr-inc,debian-cloud/debian-11,100,us-east1-b
 firoz-vm03,Simply,don-inc,debian-cloud/debian-11,100,us-east1-b
 vd-vm03,check,vd-inc,debian-cloud/debian-11,123,us-east1-b
-vd-vm04,test,vd-inc,debian-cloud/debian-11,125	us-east1-b
+vd-vm04,test,vd-inc,debian-cloud/debian-11,125,us-east1-b
