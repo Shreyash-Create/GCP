@@ -1,4 +1,4 @@
 name,description,client-name,image,disk-size,zone
 test-vm01,this is used for application,abc-inc,debian-cloud/debian-11,100,us-east1-b
 test-vm02,this is for application,shr-inc,debian-cloud/debian-11,100,us-east1-b
-Firoz,Simply,Don,debian-cloud/debian-11,100,us-east1-b
+firoz-vm03,Simply,don-inc,debian-cloud/debian-11,100,us-east1-b
