@@ -1,2 +1,3 @@
 name,description,client-name,image,disk-size,zone
 test-01-vm,applications,abc-inc,debian-cloud/debian-11,100,us-east1-b
+Alibaba-ka-vm,Test-in-office,Alibaba,Debian-11,100,us-east-1c
