@@ -1,2 +1,2 @@
 name,description,client-name,image,disk-size,zone
-testvm-10,app,non-inc,debian-cloud/debian-11,100,us-east1-b
+test-11,timepass,abc-inc,debian-cloud/debian-11,100,us-east1-b
