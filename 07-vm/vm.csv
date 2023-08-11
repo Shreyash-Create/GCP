@@ -1,3 +1,2 @@
 name,description,client-name,image,disk-size,zone
-testvm-01,applications,abc-inc,debian-cloud/debian-11,100,us-east1-b
-testvm-02,Test-in-office,xyz-inc,debian-cloud/debian-11,100,us-east1-b
+Shreyash118,Test118,None,debian-cloud/debian-11,100,us-east-1c
