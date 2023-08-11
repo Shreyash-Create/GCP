@@ -1,2 +1,2 @@
 name,description,client-name,image,disk-size,zone
-test-11,timepass,abc-inc,debian-cloud/debian-11,100,us-east1-b
+test-12,demo,imshreyyash@gmail.com,debian-cloud/debian-11,100,us-east1-b
